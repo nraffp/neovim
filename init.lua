@@ -23,12 +23,16 @@ require("lazy").setup("plugins", {
     ui = { border = "single" },
     change_detection = { notify = false },
 })
-pcall(require, "override")
-
 require("core")
 
 -- Set colorscheme
 vim.cmd("colorscheme argon")
+
+-- Call the override module if it exists.
+local ok, err = pcall(require, "override")
+if not ok then
+    print("error while loading override module:" .. err)
+end
 
 -- Need to get templ files to work correctly with treesitter
 -- See https://github.com/vrischmann/tree-sitter-templ and https://github.com/a-h/templ
