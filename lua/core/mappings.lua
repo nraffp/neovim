@@ -1,5 +1,6 @@
-local map = vim.keymap.set
+#INTERVAL
 
+local map = vim.keymap.set
 -- Better Indenting
 map("v", "<", "<gv")
 map("v", ">", ">gv")

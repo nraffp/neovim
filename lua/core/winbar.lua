@@ -9,6 +9,7 @@ end
 function winbar()
     return table.concat({
         file_name(),
+        "%#WinBar#"
     })
 end
 

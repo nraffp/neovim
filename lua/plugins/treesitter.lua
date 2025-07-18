@@ -90,6 +90,7 @@ return {
             "proto",
             "typst",
             "sql",
+            "cpp",
         },
         incremental_selection = {
             enable = true,

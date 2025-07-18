@@ -73,6 +73,8 @@ M.config = function(opts)
     lspconfig.lua_ls.setup({ { capabilities = base_capabilities, on_attach = base_on_attach } })
     lspconfig.html.setup({ { capabilities = base_capabilities, on_attach = base_on_attach } })
     lspconfig.astro.setup({ { capabilities = base_capabilities, on_attach = base_on_attach } })
+    vim.lsp.enable('marksman')
+    vim.lsp.enable('clangd')
 end
 
 return M

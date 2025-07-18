@@ -1,4 +1,6 @@
 plugin
 .DS_Store
 log.txt
-lua/override.lua
+
+lua/override/*.lua
+!lua/override/init.lua

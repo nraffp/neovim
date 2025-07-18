@@ -37,6 +37,7 @@ return {
     zinc_750 = "#333338",
     zinc_800 = "#27272A",
     zinc_850 = "#202023",
+    zinc_875 = "#1F1F21",
     zinc_900 = "#18181B",
 
     neutral_100 = "#F5F5F5",
@@ -48,6 +49,7 @@ return {
     neutral_700 = "#404040",
     neutral_750 = "#333333",
     neutral_800 = "#262626",
+    neutral_825 = "#232323",
     neutral_850 = "#1F1F1F",
     neutral_875 = "#1B1B1B",
     neutral_900 = "#171717",
