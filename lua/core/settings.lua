@@ -20,4 +20,6 @@ set.linebreak = true
 set.cursorline = true
 set.relativenumber = true
 
-vim.api.nvim_create_autocmd("BufEnter", { command = "set formatoptions-=o" })
+
+-- This variables is used in various places in this config, not a standard vim variable.
+vim.g.format_on_save = true

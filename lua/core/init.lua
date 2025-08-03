@@ -4,6 +4,7 @@ local core_modules = {
     "core.statusline",
     "core.winbar",
     "core.autocmds",
+    "core.lsp",
 }
 
 for _, module in ipairs(core_modules) do
