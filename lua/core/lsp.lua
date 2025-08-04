@@ -27,14 +27,11 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
         -- Confgure LSP formatting if the server is able to.
         if client:supports_method("textDocument/formatting") then
-            vim.api.nvim_create_autocmd("BufWrite", {
-                group = vim.api.nvim_create_augroup("formatting.lsp." .. client.name, { clear = false }),
-                buffer = args.buf,
-                callback = function()
-                    if vim.g.format_on_save then
-                        vim.lsp.buf.format({ bufnr = args.buf, id = client.id })
-                    end
-                end,
+            local format = require("core.formatter")
+            format.attach_formatter(args.buf, client.name, {
+                format = function(format_args)
+                    vim.lsp.buf.format({ bufnr = format_args.bufnr, id = client.id })
+                end
             })
         end
     end
@@ -44,14 +41,6 @@ vim.api.nvim_create_autocmd("LspDetach", {
     callback = function(args)
         local client = vim.lsp.get_client_by_id(args.data.client_id)
         if not client then return end
-
-        -- Remove formatting auto commands
-        local auto_cmds = vim.api.nvim_get_autocmds({
-            buffer = args.buf,
-            group = "formatting.lsp." .. client.name,
-        })
-        for _, auto_cmd in pairs(auto_cmds) do
-            vim.api.nvim_del_autocmd(auto_cmd.id)
-        end
+        require("core.formatter").detach_formatter(args.buf, client.name)
     end,
 })

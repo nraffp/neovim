@@ -35,12 +35,11 @@ map("n", "N", "Nzz", { noremap = true, silent = true })
 map("n", "<bs>", "<C-^>", { noremap = true, silent = true })
 
 -- Window Switching
-for i=1,9 do
-    vim.keymap.set("n", "<leader>".. i, function ()
+for i = 1, 9 do
+    vim.keymap.set("n", "<leader>" .. i, function()
         set_win_by_number(i)
     end)
 end
 
 map("n", "<leader>k", vim.diagnostic.open_float, { noremap = true, silent = true })
-map("n", "<leader>F", vim.lsp.buf.format)
-
+map("n", "<leader>F", require("core.formatter").format)
