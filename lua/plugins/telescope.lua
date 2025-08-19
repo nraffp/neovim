@@ -4,6 +4,10 @@ local M = { "nvim-telescope/telescope.nvim" }
 M.config = function()
     require("telescope").setup({
         defaults = {
+            layout_strategy = "flex",
+            layout_config = {
+                flip_columns = 250,
+            },
             mappings = {
                 i = {
                     ["<esc>"] = "close",
