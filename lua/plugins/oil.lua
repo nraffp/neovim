@@ -11,6 +11,7 @@ return {
         prompt_save_on_select_new_entry = false,
         default_file_explorer = true,
         columns = {},
+        watch_for_changes = true,
         keymaps = {
             ["<ESC>"] = "actions.close",
             ["q"] = "actions.close",
