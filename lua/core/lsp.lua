@@ -6,6 +6,7 @@ local ENABLED_LSP_SERVERS = {
     "clangd",
     "rust_analyzer",
     "lua_ls",
+    "pyright"
 }
 
 for _, server in pairs(ENABLED_LSP_SERVERS) do
