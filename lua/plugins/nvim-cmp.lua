@@ -1,5 +1,5 @@
 return {
-    "hrsh7th/nvim-cmp" ,
+    "hrsh7th/nvim-cmp",
     event = "InsertEnter",
     config = function()
         local cmp = require("cmp")
@@ -14,9 +14,8 @@ return {
                 end,
             },
             window = {
-                -- completion = cmp.config.window.bordered({ border = {"┌","─","┐","│","┘","─","└","│"}}),
                 completion = cmp.config.window.bordered({ border = "single" }),
-                documentation = cmp.config.window.bordered(),
+                documentation = cmp.config.window.bordered({ border = "single" }),
             },
             snippet = {
                 expand = function(args)
