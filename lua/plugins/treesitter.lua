@@ -58,7 +58,7 @@ return {
             },
         },
         highlight = { enable = true, additional_vim_regex_highlighting = false },
-        indent = { enable = true },
+        indent = { enable = true, disable = {"c", "cpp"} },
         context_commentstring = { enable = true, enable_autocmd = false },
         ensure_installed = {
             "svelte",
@@ -120,6 +120,7 @@ return {
                 templ = "templ",
             },
         })
+
         -- local treesitter_parser_config = require("nvim-treesitter.parsers").get_parser_configs()
 
         -- -- This configures the parser for templ files (A go templating language)
