@@ -108,29 +108,5 @@ return {
             require("lazyvim.util").deprecate("treesitter.ensure_installed", "treesitter.opts.ensure_installed")
         end
         require("nvim-treesitter.configs").setup(opts)
-
-        -- Hide all semantic highlights because it is current overriding highlights in a manner I don't like
-        -- TODO: Find a better solution to this because semantic highlighting can be useful for lsp
-        for _, group in ipairs(vim.fn.getcompletion("@lsp", "highlight")) do
-            vim.api.nvim_set_hl(0, group, {})
-        end
-
-        vim.filetype.add({
-            extension = {
-                templ = "templ",
-            },
-        })
-
-        -- local treesitter_parser_config = require("nvim-treesitter.parsers").get_parser_configs()
-
-        -- -- This configures the parser for templ files (A go templating language)
-        -- treesitter_parser_config.templ = {
-        --     install_info = {
-        --         url = "https://github.com/vrischmann/tree-sitter-templ.git",
-        --         files = { "src/parser.c", "src/scanner.c" },
-        --         branch = "master",
-        --     },
-        -- }
-        -- vim.treesitter.language.register("templ", "templ")
     end,
 }

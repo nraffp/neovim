@@ -1,6 +1,7 @@
 -- Bootstrapping Lazy Plugin Manager
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 local lazy_installed = vim.loop.fs_stat(lazypath)
+
 if not lazy_installed then
     vim.fn.system({
         "git",

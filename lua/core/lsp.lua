@@ -26,6 +26,9 @@ vim.api.nvim_create_autocmd("LspAttach", {
         local client = vim.lsp.get_client_by_id(args.data.client_id)
         if not client then return end
 
+        -- Disable LSP Semantic Highlighting for ALL servers.
+        client.server_capabilities.semanticTokensProvider = nil
+
         -- Confgure LSP formatting if the server is able to.
         if client:supports_method("textDocument/formatting") then
             local format = require("core.formatter")
